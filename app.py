@@ -53,13 +53,12 @@ if plotly_chart:
     st.plotly_chart(fig, use_container_width=True)
 
 # crear una casilla de verificación
-build_histogram = st.checkbox('Construir un histograma')
+build_histogram_2 = st.checkbox('Construir un histograma')
 
-if build_histogram:  # si la casilla de verificación está seleccionada
+if build_histogram_2:  # si la casilla de verificación está seleccionada
     st.write('Construir un histograma para la columna odómetro')
 
-    fig = go.Figure(
-        data=[go.Scatter(x=car_data['odometer'], y=car_data['price'], mode='markers')])
+    fig = go.Figure(data=[go.Histogram(x=car_data['odometer'])])
 
     # Opcional: Puedes añadir un título al gráfico si lo deseas
     fig.update_layout(title_text='Relación entre Odómetro y Precio')
@@ -69,8 +68,8 @@ if build_histogram:  # si la casilla de verificación está seleccionada
     st.plotly_chart(fig, use_container_width=True)
 
 # crear una casilla de verificación
-plotly_chart = st.checkbox('Construir diagrama dispersión')
-if plotly_chart:
+plotly_chart_2 = st.checkbox('Construir diagrama dispersión')
+if plotly_chart_2:
     # Escribir un mensaje en la aplicación
     st.write(
         'Creación diagrama de dispersión para el conjunto de datos de anuncios de venta de coches')
